@@ -1,10 +1,92 @@
 @charset "UTF-8";
 
-html{
+html {
     height: 100%;
 }
 
-body{
+body {
     height: 100%;
-    background: #186AC9;
+    background: rgb(45, 136, 253);
+    background: linear-gradient(180deg, rgba(45, 136, 253, 1) 30%, rgba(253, 187, 45, 1) 100%);
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    padding-top: 90px;
+}
+
+img.atlas {
+    width: 150px;
+    height: 60px;
+}
+
+.sns {
+    text-align: center;
+    font-family: "Freeman", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    color: #fff;
+}
+
+.content {
+    background-color: rgba(0, 0, 0, 0.20);
+    padding: 20px;
+    width: 300px;
+    height: 330px;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.welcome {
+    text-align: center;
+    font-family: "Yu Gothic";
+    font-size: 20px;
+    color: #fff;
+    padding-bottom: 20px;
+}
+
+.mail_title,
+.pass_title {
+    font-family: "Yu Gothic";
+    color: #fff;
+}
+
+.mail_form,
+.pass_form {
+    padding-bottom: 20px;
+}
+
+.new_user {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.content a {
+    color: #fff;
+    display: inline-block;
+    border-bottom: #fff solid 2px;
+}
+
+.input {
+    border-radius: 5px;
+    height: 35px;
+    width: 90%;
+    border: none;
+}
+
+.login_button {
+    background-color: #E63946;
+    border-radius: 5px;
+    padding: 10px 30px;
+    margin-left: 170px;
+    margin-bottom: 20px;
+    color: #fff;
+    border: none;
 }

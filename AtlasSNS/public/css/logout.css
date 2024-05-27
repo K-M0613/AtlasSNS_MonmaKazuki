@@ -53,19 +53,26 @@ img.atlas {
 }
 
 .mail_title,
-.pass_title {
+.pass_title,
+.name_title {
     font-family: "Yu Gothic";
     color: #fff;
 }
 
-.mail_form,
-.pass_form {
+/* .mail_form,
+.pass_form,
+.name_form {
     padding-bottom: 20px;
-}
+} */
 
 .new_user {
     text-align: center;
-    padding-top: 30px;
+    padding-top: 20px;
+}
+
+.create_user {
+    text-align: center;
+    padding-top: 50px;
 }
 
 .content a {
@@ -74,19 +81,36 @@ img.atlas {
     border-bottom: #fff solid 2px;
 }
 
-.input {
+.content .a input,
+.register .a input {
     border-radius: 5px;
-    height: 35px;
-    width: 90%;
+    height: 30px;
+    width: 250px;
     border: none;
+    margin-bottom: 20px;
 }
 
-.login_button {
+/* .login_button,
+.register_button {
     background-color: #E63946;
     border-radius: 5px;
-    padding: 10px 30px;
     margin-left: 170px;
     margin-bottom: 20px;
+    padding: 10px 30px;
     color: #fff;
     border: none;
+} */
+
+.register {
+    background-color: rgba(0, 0, 0, 0.20);
+    padding: 20px;
+    width: 350px;
+    height: 400px;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.register a {
+    color: #fff;
+    display: inline-block;
+    border-bottom: #fff solid 2px;
 }

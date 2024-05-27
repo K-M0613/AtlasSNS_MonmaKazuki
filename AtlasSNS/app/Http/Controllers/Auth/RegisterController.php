@@ -52,6 +52,8 @@ class RegisterController extends Controller
                 'password' => bcrypt($password),
             ]);
 
+            $request->session()->put('username',$username); //サーバーにデータを一時的に保存
+
             return redirect('added');
         }
         return view('auth.register');

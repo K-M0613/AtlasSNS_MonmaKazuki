@@ -39,8 +39,15 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+
     public function register(Request $request){
         if($request->isMethod('post')){
+            $request->validate([
+            'username' => 'required|min:2|max:12',
+            'mail' => 'required|min:5|max:40|unique:users|email:strict',
+            'password' => 'required|alpha_dash|min:8|max:20|confirmed',
+            'password_confirmation' => 'required|alpha_dash|min:8|max:20|'
+        ]);
 
             $username = $request->input('username');
             $mail = $request->input('mail');

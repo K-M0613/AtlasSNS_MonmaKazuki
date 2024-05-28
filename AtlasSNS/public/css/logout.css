@@ -104,8 +104,7 @@ img.atlas {
 .register {
     background-color: rgba(0, 0, 0, 0.20);
     padding: 20px;
-    width: 350px;
-    height: 400px;
+    width: fit-content;
     border-radius: 20px 20px 20px 20px;
 }
 

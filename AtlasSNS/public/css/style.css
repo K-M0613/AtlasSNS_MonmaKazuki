@@ -1,22 +1,74 @@
 @charset "utf-8";
-html{
+
+html {
+    height: 100%;
 }
-body{
+
+body {
+    height: 100%;
 }
+
 /* header */
-header{
-    background:#186AC9;
+header {
+    background: #186AC9;
+}
+
+/* アコーディオンメニュー */
+
+
+
+.accordion-btn {
+    position: relative;
+    cursor: pointer;
+}
+
+/* .accordion-btn::before {
+    background: #fff;
+    content: "";
+    height: 2px;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: rotate(90deg);
+    transition: transform .3s ease-in-out;
+    width: 15px;
+} */
+
+.accordion-btn::after {
+    border-right: solid 2px #000;
+    border-top: solid 2px #000;
+    content: "";
+    display: block;
+    height: 8px;
+    position: absolute;
+    right: 25px;
+    top: 38%;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+    width: 8px;
+}
+
+/* .accordion-btn .open::before {
+    transform: rotate(180deg);
+} */
+
+.accordion-btn .open::after {
+    top: 45%;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
 
 /* main content */
-#row{
+#row {
     display: flex;
     flex-flow: row wrap;
 }
-#container{
+
+#container {
     flex: 0 0 80%;
 }
-#side-bar{
+
+#side-bar {
     flex: 0 0 19%;
     border-left: 1px solid #727272;
 }

@@ -22,18 +22,6 @@ header {
     cursor: pointer;
 }
 
-/* .accordion-btn::before {
-    background: #fff;
-    content: "";
-    height: 2px;
-    position: absolute;
-    right: 25px;
-    top: 50%;
-    transform: rotate(90deg);
-    transition: transform .3s ease-in-out;
-    width: 15px;
-} */
-
 .accordion-btn::after {
     border-right: solid 2px #000;
     border-top: solid 2px #000;
@@ -47,10 +35,6 @@ header {
     transform: rotate(135deg);
     width: 8px;
 }
-
-/* .accordion-btn .open::before {
-    transform: rotate(180deg);
-} */
 
 .accordion-btn .open::after {
     top: 45%;

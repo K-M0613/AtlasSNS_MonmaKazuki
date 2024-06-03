@@ -26,7 +26,7 @@
         <h1><a href="/top"><img src="images/atlas.png"></a></h1>
             <div id="">
                 <div id="">
-                    <p>{{ auth::User()->username }}さん<img src="images/icon1.png"></p>
+                    <p>{{ auth::User()->username }}さん<img src="{{ asset('images/'.auth::User()->images) }}"/></p>
                 <div>
                     <div class="accordion">
                         <p class="accordion-btn"></p>

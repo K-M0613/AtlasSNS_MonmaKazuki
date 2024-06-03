@@ -36,10 +36,14 @@ header {
     width: 8px;
 }
 
-.accordion-btn .open::after {
+.accordion-btn.open::after {
     top: 45%;
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
+}
+
+ul {
+    display: none;
 }
 
 /* main content */

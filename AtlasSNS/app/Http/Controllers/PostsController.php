@@ -25,9 +25,25 @@ class PostsController extends Controller
         return redirect('/top');  //投稿処理後、トップページにリダイレクト
     }
 
+    public function edit($id)
+    {
+        Post::where('id', $id)->first();//where句で一致する投稿を検索
+        return view('posts.index', ['post' => $post]);
+    }
+
+    public function update(Request $request)
+    {
+        $id = $request->input('post');
+        $up_post = $request->input('upPost');
+        Post::where('id', $id)->update([
+            'post' => $up_post
+        ]);
+        return redirect('/top');
+    }
+
     public function delete($id)
     {
-        Post::where('id', $id)->delete();
+        Post::where('id', $id)->delete();//where句で一致する投稿を検索
         return redirect('/top');
     }
 }

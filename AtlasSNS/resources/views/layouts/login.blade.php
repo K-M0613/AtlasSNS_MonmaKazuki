@@ -30,7 +30,7 @@
                 <div>
                     <div class="accordion">
                         <p class="accordion-btn"></p>
-                        <ul>
+                        <ul class="accordion-list">
                             <li><a href="/top">ホーム</a></li>
                             <li><a href="/profile">プロフィール</a></li>
                             <li><a href="/logout">ログアウト</a></li>

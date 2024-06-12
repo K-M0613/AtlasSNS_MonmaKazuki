@@ -42,7 +42,7 @@ header {
     transform: rotate(-45deg);
 }
 
-ul {
+.accordion-list {
     display: none;
 }
 
@@ -59,4 +59,26 @@ ul {
 #side-bar {
     flex: 0 0 19%;
     border-left: 1px solid #727272;
+}
+
+/* 投稿内容表示 */
+
+.post-block {
+    list-style: none;
+    border-bottom: 1px solid #000;
+    display: flex;
+}
+
+.post-content {
+    width: 100%;
+    padding: 15px;
+}
+
+.post-content>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-name {
+    margin-bottom: 10px;
 }

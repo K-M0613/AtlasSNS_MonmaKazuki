@@ -32,6 +32,7 @@ Route::post('/added', 'Auth\RegisterController@added');
 //ログイン中のページ
 Route::get('/top','PostsController@index');
 Route::post('/post', 'PostsController@store');
+Route::get('/post/{id}/delete', 'PostsController@delete');
 Route::get('/profile','UsersController@profile');
 
 Route::get('/search','UsersController@index');

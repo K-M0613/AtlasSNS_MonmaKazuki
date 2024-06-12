@@ -11,7 +11,7 @@ class PostsController extends Controller
 {
     //
     public function index(){
-        $posts = Post::with('users')->orderBy('created_at', 'desc')->get(); //投稿内容を新しい順に取得
+        $posts = Post::with('user')->orderBy('created_at', 'desc')->get(); //投稿内容を新しい順に取得
         return view('posts.index', compact('posts')); //compact関数=変数名とその値から配列を作成
     }
 
@@ -23,5 +23,11 @@ class PostsController extends Controller
         $post->save();  //データベースに投稿を保存
 
         return redirect('/top');  //投稿処理後、トップページにリダイレクト
+    }
+
+    public function delete($id)
+    {
+        Post::where('id', $id)->delete();
+        return redirect('/top');
     }
 }

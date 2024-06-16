@@ -33,7 +33,7 @@ Route::post('/added', 'Auth\RegisterController@added');
 Route::get('/top','PostsController@index');
 Route::post('/post', 'PostsController@store');
 Route::get('/post/{id}/delete', 'PostsController@delete');
-Route::get('/post/{id}/edit', 'PostsController@edit');
+// Route::get('/post/{id}/edit', 'PostsController@edit');
 Route::post('/post/{id}/update', 'PostsController@update');
 Route::get('/profile','UsersController@profile');
 

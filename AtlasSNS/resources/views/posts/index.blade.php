@@ -7,6 +7,7 @@
   {{ Form::text('post', null,['class' => 'post_form', 'required', 'placeholder' => '投稿内容を入力してください。'])}}
 </div>
 <input type="image" id="image" alt="投稿" src="../images/post.png" />
+{!! Form::close() !!}
 @foreach ($posts as $post)
   <div>
     <ul>
@@ -33,10 +34,10 @@
 <!-- モーダルの中身 -->
 <div class="modal js-modal">
   <div class="modal_bg js-modal-close"></div>
-  <div class="modal_contact">
-    <form action="post/update" method="post">
+  <div class="modal_content">
+    <form action="post/{id}/update" method="post">
       <textarea name="upPost" class="modal_post"></textarea>
-      <input type="hidden" name="id" class="modal_id" value="{{ $id->post }}">
+      <input type="hidden" name="id" class="modal_id" value="{{ $post->post }}">
       <input type="submit" value="更新">
       {{ csrf_field() }}
     </form>

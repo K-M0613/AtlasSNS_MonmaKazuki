@@ -30,15 +30,18 @@ Route::get('/added', 'Auth\RegisterController@added');
 Route::post('/added', 'Auth\RegisterController@added');
 
 //ログイン中のページ
-Route::get('/top','PostsController@index');
-Route::post('/post', 'PostsController@store');
-Route::get('/post/{id}/delete', 'PostsController@delete');
+Route::group(['middleware' => 'auth'], function () { //認証済みのユーザーにしか表示できない的なやつ
+  Route::get('/top','PostsController@index');
+  Route::post('/post', 'PostsController@store');
+  Route::get('/post/{id}/delete', 'PostsController@delete');
 // Route::get('/post/{id}/edit', 'PostsController@edit');
-Route::post('/post/{id}/update', 'PostsController@update');
-Route::get('/profile','UsersController@profile');
+  Route::post('/post/{id}/update', 'PostsController@update');
+  Route::get('/profile','UsersController@profile');
+  Route::post('/profile', 'UsersController@profileUpdate')->name('profile_edit');
 
-Route::get('/search','UsersController@index');
+  Route::get('/search','UsersController@index');
 
-Route::get('/follow-list','PostsController@index');
-Route::get('/follower-list','PostsController@index');
-Route::get('/logout', 'Auth\LoginController@logout');
+  Route::get('/follow-list','PostsController@index');
+  Route::get('/follower-list','PostsController@index');
+  Route::get('/logout', 'Auth\LoginController@logout');
+});

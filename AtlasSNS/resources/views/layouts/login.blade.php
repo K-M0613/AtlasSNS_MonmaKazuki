@@ -23,19 +23,20 @@
 <body>
     <header>
         <div id = "head">
-        <h1><a href="/top"><img src="images/atlas.png"></a></h1>
-            <div id="">
-                <div id="">
-                    <p>{{ auth::User()->username }}さん<img src="{{ asset('images/'.auth::User()->images) }}"/></p>
-                <div>
-                    <div class="accordion">
-                        <p class="accordion-btn"></p>
-                        <ul class="accordion-list">
-                            <li><a href="/top">ホーム</a></li>
-                            <li><a href="/profile">プロフィール</a></li>
-                            <li><a href="/logout">ログアウト</a></li>
-                        </ul>
-                    </div>
+            <a href="/top"><img src="images/atlas.png" id="atlas"></a>
+            <div id="header_content">
+                <div id="user_image">
+                    <p>{{ auth::User()->username }}　さん</p>
+                </div>
+                <div class="accordion">
+                    <p class="accordion-btn"></p>
+                    <ul class="accordion-list">
+                        <li><a href="/top">ホーム</a></li>
+                        <li><a href="/profile">プロフィール編集</a></li>
+                        <li><a href="/logout">ログアウト</a></li>
+                    </ul>
+                </div>
+                <img src="{{ asset('images/'.auth::User()->images) }}"/>
             </div>
         </div>
     </header>
@@ -45,7 +46,7 @@
         </div >
         <div id="side-bar">
             <div id="confirm">
-                <p>〇〇さんの</p>
+                <p>{{ auth::User()->username }}さんの</p>
                 <div>
                 <p>フォロー数</p>
                 <p>〇〇名</p>

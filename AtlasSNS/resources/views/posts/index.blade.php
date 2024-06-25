@@ -1,15 +1,15 @@
 @extends('layouts.login')
 
 @section('content')
-<h2>機能を実装していきましょう。</h2>
-{!! Form::open(['url' => '/post']) !!}
+{!! Form::open(['url' => '/post', 'class' => 'post_container']) !!}
+<figure><img src="{{ asset('images/'.auth::User()->images) }}"id="user-image"/></figure>
 <div class="form-text">
-  {{ Form::text('post', null,['class' => 'post_form', 'required', 'placeholder' => '投稿内容を入力してください。'])}}
+  {{ Form::text('post', null,['class' => 'post_form form-control form-control-lg', 'required', 'placeholder' => '投稿内容を入力してください。'])}}
+  <input type="image" id="image" alt="投稿" src="../images/post.png" />
 </div>
-<input type="image" id="image" alt="投稿" src="../images/post.png" />
 {!! Form::close() !!}
 @foreach ($posts as $post)
-  <div>
+  <div class="post_index">
     <ul>
       <li class="post-block">
         <figure><img src="{{ asset('images/' . $post->user->images) }}" id="post-user-image"/></figure>
@@ -24,7 +24,7 @@
           @if (Auth::id() === $post->user_id)
             <div class="action-button">
               <a class="js-modal-open" href="" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="../images/edit.png" id="post-edit"></a>
-              <a href="/post/{{ $post->id }}/delete" onclick="return confirm('この投稿を削除します。よろしいですか？')"><img src="../images/trash-h.png" id="post-delete"></a>
+              <a href="/post/{{ $post->id }}/delete" onclick="return confirm('この投稿を削除します。よろしいですか？')"><img src="../images/trash-h.png" onmouseover="this.src='../images/trash.png'" onmouseout="this.src='../images/trash-h.png'" id="post-delete"></a>
             </div>
           @endif
       </li>

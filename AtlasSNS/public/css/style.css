@@ -11,6 +11,31 @@ body {
 /* header */
 header {
     background: #186AC9;
+    height: 15%;
+}
+
+header #atlas {
+    width: 150px;
+    margin: 20px;
+}
+
+#head {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#user_image p {
+    position: absolute;
+    top: 45px;
+    right: 160px;
+    font-size: 20px;
+    color: #fff;
+}
+
+#header_content img {
+    position: absolute;
+    top: 20px;
+    right: 30px;
 }
 
 /* アコーディオンメニュー */
@@ -18,13 +43,15 @@ header {
 
 
 .accordion-btn {
-    position: relative;
+    position: absolute;
+    top: 50px;
+    right: 100px;
     cursor: pointer;
 }
 
 .accordion-btn::after {
-    border-right: solid 2px #000;
-    border-top: solid 2px #000;
+    border-right: solid 3px #fff;
+    border-top: solid 3px #fff;
     content: "";
     display: block;
     height: 8px;
@@ -44,6 +71,37 @@ header {
 
 .accordion-list {
     display: none;
+    list-style: none;
+    border: solid 1px #1E88E5;
+    position: absolute;
+    top: 110px;
+    right: 1px;
+}
+
+/* .accordion-list li {
+    border-bottom: solid 1px #1E88E5;
+    height: 80px;
+    width: 200px;
+    background-color: #fff;
+    text-align: center;
+    padding-top: 30px;
+} */
+
+.accordion-list li a {
+    display: block;
+    text-align: center;
+    border-bottom: solid 1px #1E88E5;
+    text-align: center;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    width: 300px;
+    color: #B2BEB5;
+    background-color: #fff;
+}
+
+.accordion-list li a:hover {
+    background-color: #186AC9;
+    color: #fff;
 }
 
 /* main content */
@@ -59,7 +117,34 @@ header {
 #side-bar {
     flex: 0 0 19%;
     border-left: 1px solid #727272;
+    width: 100vh;
 }
+
+/* 投稿フォーム */
+
+#user-image {
+    margin-top: 40px;
+    margin-left: 100px;
+}
+
+.form-text {
+    margin-left: 180px;
+    margin-top: -60px;
+    margin-bottom: 50px;
+    width: 30%;
+}
+
+#image {
+    width: 50px;
+    border-radius: 10px 10px 10px 10px;
+    margin-left: 700px;
+}
+
+.post_container {
+    border-bottom: solid 6px #778899;
+}
+
+
 
 /* 投稿内容表示 */
 
@@ -67,6 +152,8 @@ header {
     list-style: none;
     border-bottom: 1px solid #000;
     display: flex;
+    padding-bottom: 40px;
+    padding-top: 30px;
 }
 
 .post-content {
@@ -82,6 +169,21 @@ header {
 .post-name {
     margin-bottom: 10px;
 }
+
+.action-button {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#post-edit {
+    width: 50px;
+}
+
+#post-delete {
+    width: 50px;
+}
+
+
 
 
 /* モーダル */

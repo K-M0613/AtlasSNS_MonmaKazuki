@@ -37,7 +37,7 @@ Route::group(['middleware' => 'auth'], function () { //認証済みのユーザ�
 // Route::get('/post/{id}/edit', 'PostsController@edit');
   Route::post('/post/{id}/update', 'PostsController@update');
   Route::get('/profile','UsersController@profile');
-  Route::post('/profile', 'UsersController@profileUpdate');
+  Route::post('/profile/{id}/update', 'UsersController@profileUpdate');
 
   Route::get('/search','UsersController@index');
 

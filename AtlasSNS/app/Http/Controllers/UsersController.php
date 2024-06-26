@@ -11,7 +11,7 @@ class UsersController extends Controller
     //
     public function profile(){
         $user = Auth::user();
-        return view('users.profile');
+        return view('users.profile', compact('user'));
     }
 
     public function profileUpdate()
@@ -31,7 +31,7 @@ class UsersController extends Controller
             $user->bio = $request->input('bio');
             $user->password = bcrypt($request->input('password'));
             $user->save();
-        return redirect('/top');
+            return redirect('/top');
     }
 
     public function search(){

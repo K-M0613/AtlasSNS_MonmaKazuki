@@ -18,7 +18,7 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         $post = new Post();
-        $post->post = $request->input('post'); //postカラムにデータを格納
+        $post->post = $request->input('post'); //postカラムにviewから送られてきたデータを格納
         $post->user_id = auth()->user()->id;  //user_idカラムに、投稿した認証済みのユーザーのIDを格納
         $post->save();  //データベースに投稿を保存
 

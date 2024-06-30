@@ -2,7 +2,7 @@
 
 @section('content')
 
-{!! Form::open(['url' => '/profile']) !!}
+{!! Form::open(['url' => '/profile/update', 'method' => 'post']) !!}
 {{ Form::hidden('id', $user->id) }}
 <ul>
   <li>{{ Form::label('username', 'ユーザー名') }}</li>
@@ -16,12 +16,12 @@
     <p class="alert alert-danger">※{{$errors->first('mail')}}</p>
   @endif
   <li>{{ Form::label('password', 'パスワード') }}</li>
-  <li>{{ Form::password('password', $user->password) }}</li>
+  <li>{{ Form::password('password') }}</li>
   @if ($errors->first('password'))
     <p class="alert alert-danger">※{{$errors->first('password')}}</p>
   @endif
   <li>{{ Form::label('password_confirmation', 'パスワード確認') }}</li>
-  <li>{{ Form::password('password_confirmation', null) }}</li>
+  <li>{{ Form::password('password_confirmation') }}</li>
   @if ($errors->first('password_confirmation'))
     <p class="alert alert-danger">※{{$errors->first('password_confirmation')}}</p>
   @endif

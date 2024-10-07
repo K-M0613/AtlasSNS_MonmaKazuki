@@ -40,8 +40,6 @@ header #atlas {
 
 /* アコーディオンメニュー */
 
-
-
 .accordion-btn {
     position: absolute;
     top: 50px;
@@ -60,6 +58,7 @@ header #atlas {
     top: 38%;
     -webkit-transform: rotate(135deg);
     transform: rotate(135deg);
+    transition: 0.5s;
     width: 8px;
 }
 
@@ -67,6 +66,7 @@ header #atlas {
     top: 45%;
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
+    transition: 0.5s;
 }
 
 .accordion-list {
@@ -74,19 +74,9 @@ header #atlas {
     list-style: none;
     border: solid 1px #1E88E5;
     position: absolute;
-    top: 110px;
+    top: 90px;
     right: 1px;
 }
-
-/* .accordion-list li {
-    border-bottom: solid 1px #1E88E5;
-    height: 80px;
-    width: 200px;
-    background-color: #fff;
-    text-align: center;
-    padding-top: 30px;
-} */
-
 .accordion-list li a {
     display: block;
     text-align: center;
@@ -100,7 +90,7 @@ header #atlas {
 }
 
 .accordion-list li a:hover {
-    background-color: #186AC9;
+    background-color: #003366;
     color: #fff;
 }
 
@@ -117,14 +107,16 @@ header #atlas {
 #side-bar {
     flex: 0 0 19%;
     border-left: 1px solid #727272;
-    width: 100vh;
+    min-height: 100vh;
+    width: 20vw;
 }
 
 /* 投稿フォーム */
 
-#user-image {
+.post_container img {
     margin-top: 40px;
-    margin-left: 100px;
+    margin-left: 80px;
+    width: 7.5%;
 }
 
 .form-text {
@@ -136,7 +128,7 @@ header #atlas {
 
 #image {
     width: 50px;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 10px;
     margin-left: 700px;
 }
 
@@ -152,7 +144,6 @@ header #atlas {
     list-style: none;
     border-bottom: 1px solid #000;
     display: flex;
-    ;
     padding-top: 30px;
 }
 
@@ -187,6 +178,10 @@ header #atlas {
 
 .post-name {
     font-weight: bold;
+}
+
+#post-user-image {
+    width: 50%;
 }
 
 

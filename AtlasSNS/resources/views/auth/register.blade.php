@@ -22,16 +22,16 @@
     @if ($errors->first('password'))
         <p class="alert alert-danger">※{{$errors->first('password')}}</p>
     @endif
-    <li class="pass_title">{{ Form::label('パスワード確認') }}</li>
+    <li>{{ Form::label('パスワード確認') }}</li>
     <li class="pass_form a">{{ Form::password('password_confirmation',null,['class' => 'output']) }}</li>
     @if ($errors->first('password_confirmation'))
         <p class="alert alert-danger">※{{$errors->first('password_confirmation')}}</p>
-    @endif
-  </ul>
-  <input type="submit" value="新規登録" class="btn btn-danger btn-sm" style="margin-left: 200px;">
-  <!-- {{ Form::submit('新規登録', ['class' => 'register_button']) }} -->
-  <p class="new_user"><a href="/login">ログイン画面へ戻る</a></p>
-</div>
+        @endif
+      </ul>
+      <input type="submit" value="新規登録" class="btn btn-danger btn-sm" style="margin-left: 200px;">
+      <!-- {{ Form::submit('新規登録', ['class' => 'register_button']) }} -->
+      <p class="new_user"><a href="/login">ログイン画面へ戻る</a></p>
+    </div>
 {!! Form::close() !!}
 
 @endsection

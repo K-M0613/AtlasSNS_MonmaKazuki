@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'mail', 'password',
+        'username', 'mail', 'password','images', 'bio',
     ];
 
     /**
@@ -31,13 +31,34 @@ class User extends Authenticatable
         return $this->hasMany('App\Post');
     }
 
+    // フォロワーとのリレーション
     public function followUsers()
     {
-        return $this->belongsToMany('App\User','follow_users', 'followed_id', 'following_id');
+        return $this->belongsToMany('App\User','follows', 'followed_id', 'following_id');
     }
-
+    // フォローしているユーザーとのリレーション
     public function follows()
     {
-        return $this->belongsToMany('App\User', 'follow_users', 'following_id', 'followed_id');
+        return $this->belongsToMany('App\User', 'follows', 'following_id', 'followed_id');
+    }
+// フォローする
+    public function follow(Int $user)
+    {
+        return $this->follows()->attach($user);
+    }
+// フォロー外す
+    public function unfollow(Int $user)
+    {
+        return $this->follows()->detach($user);
+    }
+// フォローしているかを確認
+    public function isFollowing($user)
+    {
+        return $this->follows()->where('followed_id',$user)->exists();
+    }
+// フォローされているかの確認
+    public function isFollowed($user)
+    {
+        return $this->follows()->where('following_id', $user)->exists();
     }
 }

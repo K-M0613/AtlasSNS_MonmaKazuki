@@ -37,9 +37,15 @@ Route::group(['middleware' => 'auth'], function () { //認証済みのユーザ�
 // Route::get('/post/{id}/edit', 'PostsController@edit');
   Route::post('/post/{id}/update', 'PostsController@update');
   Route::get('/profile','UsersController@profile');
+  Route::post('/follow/{id}', 'UsersController@follow')->name('follow');
   Route::post('/profile/update', 'UsersController@profileUpdate');
+  Route::get('/userProfile/{id}', 'UsersController@userProfile')->name('userProfile');
+  Route::post('/unfollow/{id}', 'UsersController@unfollow')->name('unfollow');
+  Route::get('/followList', 'FollowsController@followList')->name('followList');
+  Route::get('/followerList', 'FollowsController@followerList')->name('followerList');
 
-  Route::get('/search','UsersController@index');
+  Route::get('/search','UsersController@search');
+  Route::post('/search','UsersController@search');
 
   Route::get('/follow-list','PostsController@index');
   Route::get('/follower-list','PostsController@index');

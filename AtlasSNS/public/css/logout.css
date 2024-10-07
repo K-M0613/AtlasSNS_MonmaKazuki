@@ -59,12 +59,6 @@ img.atlas {
     color: #fff;
 }
 
-/* .mail_form,
-.pass_form,
-.name_form {
-    padding-bottom: 20px;
-} */
-
 .new_user {
     text-align: center;
     padding-top: 20px;
@@ -89,17 +83,6 @@ img.atlas {
     border: none;
     margin-bottom: 20px;
 }
-
-/* .login_button,
-.register_button {
-    background-color: #E63946;
-    border-radius: 5px;
-    margin-left: 170px;
-    margin-bottom: 20px;
-    padding: 10px 30px;
-    color: #fff;
-    border: none;
-} */
 
 .register {
     background-color: rgba(0, 0, 0, 0.20);

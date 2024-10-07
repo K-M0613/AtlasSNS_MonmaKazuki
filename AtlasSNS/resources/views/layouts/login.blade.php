@@ -23,7 +23,7 @@
 <body>
     <header>
         <div id = "head">
-            <a href="/top"><img src="images/atlas.png" id="atlas"></a>
+            <a href="/top"><img src="{{ asset('images/atlas.png')}}" id="atlas"></a>
             <div id="header_content">
                 <div id="user_image">
                     <p>{{ auth::User()->username }}　さん</p>
@@ -49,16 +49,16 @@
                 <p>{{ auth::User()->username }}さんの</p>
                 <div>
                 <p>フォロー数</p>
-                <p>〇〇名</p>
+                <p>{{ auth::user()->follows()->count()}}名</p>
                 </div>
-                <p class="btn"><a href="">フォローリスト</a></p>
+                <p class="btn"><a href="/followList" class="btn btn-primary">フォローリスト</a></p>
                 <div>
                 <p>フォロワー数</p>
-                <p>〇〇名</p>
+                <p>{{ auth::user()->followUsers()->count()}}名</p>
                 </div>
-                <p class="btn"><a href="">フォロワーリスト</a></p>
+                <p class="btn"><a href="/followerList" class="btn btn-primary">フォロワーリスト</a></p>
             </div>
-            <p class="btn"><a href="">ユーザー検索</a></p>
+            <p class="btn"><a href="/search">ユーザー検索</a></p>
         </div>
     </div>
     <footer>

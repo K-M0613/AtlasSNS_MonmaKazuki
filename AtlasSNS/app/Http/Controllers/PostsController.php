@@ -33,6 +33,10 @@ class PostsController extends Controller
 
     public function update(Request $request)
     {
+        $validator = $request->validate([
+            'post' => 'required|min:1|max:150',
+        ]);
+        $validator->Validate();
         $id = $request->input('id');
         $up_post = $request->input('upPost');
         Post::where('id', $id)->update([
@@ -44,6 +48,6 @@ class PostsController extends Controller
     public function delete($id)
     {
         Post::where('id', $id)->delete();//where句で一致する投稿を検索
-        return redirect('/top');
+        return back();
     }
 }

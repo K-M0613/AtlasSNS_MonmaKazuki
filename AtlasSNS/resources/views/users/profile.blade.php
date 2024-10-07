@@ -2,7 +2,7 @@
 
 @section('content')
 
-{!! Form::open(['url' => '/profile/update', 'method' => 'post']) !!}
+{!! Form::open(['url' => '/profile/update', 'method' => 'post', 'enctype' => 'multipart/form-data']) !!}
 {{ Form::hidden('id', $user->id) }}
 <ul>
   <li>{{ Form::label('username', 'ユーザー名') }}</li>
@@ -30,6 +30,7 @@
   @if ($errors->first('bio'))
     <p class="alert alert-danger">※{{$errors->first('bio')}}</p>
   @endif
+  <li>{{ Form::file('images')}}</li>
 </ul>
 <div class="w-25">
   {{ Form::submit('更新する', ['class' => 'btn btn-danger btn-sm']) }}

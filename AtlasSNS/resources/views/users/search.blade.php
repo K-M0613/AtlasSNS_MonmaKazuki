@@ -1,23 +1,24 @@
 @extends('layouts.login')
 @section('content')
 {!! Form::open(['url' => '/search']) !!}
-<div>
-  {{ Form::text('username', $searchWord) }}
+<div class="search_border">
+  <div class="search-text">
+    {{ Form::text('username', $searchWord,['class' => ' form-control search-form']) }}
+    <input type="image" src="/images/search.png" id="searchImg">
+  </div>
 </div>
-<div>
-  <input type="image" src="/images/search.png">
-</div>
+
 {!! Form::close() !!}
-<div>
+<div class="search_result">
   @foreach($finds as $find)
   <ul>
     <li>
       <img src="{{ asset('images/'.$find->images) }}"/>
     </li>
-    <li>
-      <p>{{$find->username}}</p>
+    <li class="username_list">
+      <p class="username">{{$find->username}}</p>
     </li>
-    <li>
+    <li class="followBtn">
       @if (!auth()->user()->isFollowing($find->id))
       <form action="{{route('follow', ['id' => $find->id])}}" method="post">
         @csrf

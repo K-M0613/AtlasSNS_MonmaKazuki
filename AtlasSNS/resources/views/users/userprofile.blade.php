@@ -2,19 +2,22 @@
 
 @section('content')
 @foreach ($users as $user)
-<div>
-  <ul>
-    <li>
-        <figure><img src="{{ asset('/storage/images/' . $user->images) }}" /></figure>
-        <div>ユーザー名</div>
-        <p>{{ $user->username }}</p>
-    </li>
-    <li>
-      <div>自己紹介</div>
-      <p>{{ $user->bio }}</p>
-      <div>
+<div class="search_border">
+  <table class="userShowTable" cellspacing="10">
+    <tr>
+      <td><img src="{{ asset('/storage/images/' . $user->images) }}" /></td>
+      <td style="font-size: 24px;" class="td_title">ユーザー名</td>
+      <td style="font-size: 24px;">{{ $user->username }}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td style="font-size: 24px;">自己紹介</td>
+      <td style="font-size: 24px;">{{ $user->bio }}</td>
+    </tr>
+  </table>
+      <div class="followButton">
         @if (!auth()->user()->isFollowing($user->id))
-        <form action="{{route('follow', ['id' => $user->id])}}" method="post">
+          <form action="{{route('follow', ['id' => $user->id])}}" method="post">
           @csrf
           <button type="submit" class="btn btn-primary">フォローする</button>
         </form>
@@ -25,8 +28,6 @@
           </form>
         @endif
       </div>
-    </li>
-  </ul>
 </div>
 @endforeach
 @foreach ($posts as $post)

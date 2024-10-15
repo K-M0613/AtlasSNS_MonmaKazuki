@@ -27,11 +27,13 @@ class UsersController extends Controller
             'bio' => 'max:150',
             'password' => 'required|alpha_dash|min:8|max:20|confirmed',
             'password_confirmation' => 'required|alpha_dash|min:8|max:20|',
-            'images' => 'file|mimes:jpg, png, bmp, gif, svg',
+            'images' => 'image|mimes:jpg, png, bmp, gif, svg|max:2048',
         ]);
         if ($request->hasFile('images')) {
             $image = $request->file('images')->store('public/images');
             $imageName = basename($image);
+        } else {
+            $imageName = $user->images;
         }
         $validator->Validate();
         $user->username = $request->input('username');

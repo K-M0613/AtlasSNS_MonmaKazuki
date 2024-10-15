@@ -36,7 +36,7 @@
                         <li><a href="/logout">ログアウト</a></li>
                     </ul>
                 </div>
-                <img src="{{ asset('images/'.auth::User()->images) }}"/>
+                <img src="{{ asset('/storage/images/'.auth::User()->images) }}"/>
             </div>
         </div>
     </header>
@@ -46,19 +46,19 @@
         </div >
         <div id="side-bar">
             <div id="confirm">
-                <p>{{ auth::User()->username }}さんの</p>
-                <div>
-                <p>フォロー数</p>
-                <p>{{ auth::user()->follows()->count()}}名</p>
+                <p class="authUserName">{{ auth::User()->username }}さんの</p>
+                <div class="followCount">
+                <p class="follow-count">フォロー数</p>
+                <p class="follow-count">{{ auth::user()->follows()->count()}}人</p>
                 </div>
-                <p class="btn"><a href="/followList" class="btn btn-primary">フォローリスト</a></p>
-                <div>
-                <p>フォロワー数</p>
-                <p>{{ auth::user()->followUsers()->count()}}名</p>
+                <p class="follow-btn"><a href="/followList" class="btn btn-primary">フォローリスト</a></p>
+                <div class="followCount">
+                <p class="follow-count">フォロワー数</p>
+                <p class="follow-count">{{ auth::user()->followUsers()->count()}}人</p>
                 </div>
-                <p class="btn"><a href="/followerList" class="btn btn-primary">フォロワーリスト</a></p>
+                <p class="follow-btn"><a href="/followerList" class="btn btn-primary">フォロワーリスト</a></p>
             </div>
-            <p class="btn"><a href="/search">ユーザー検索</a></p>
+            <p class="search-btn"><a href="/search" class="btn btn-primary">ユーザー検索</a></p>
         </div>
     </div>
     <footer>

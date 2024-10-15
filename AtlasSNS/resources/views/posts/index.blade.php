@@ -2,8 +2,9 @@
 
 @section('content')
 {!! Form::open(['url' => '/post', 'class' => 'post_container']) !!}
-<img src="{{ asset('/storage/images/'.auth::User()->images) }}"id="user-image"/><div class="form-text">
-  {{ Form::textarea('post', null,['class' => 'post_form form-control form-control-lg', 'required', 'placeholder' => '投稿内容を入力してください。'])}}
+<img src="{{ asset('/storage/images/'.auth::User()->images) }}"id="user-image"/>
+<div class="form-text">
+  {{ Form::textarea('post', null,['class' => 'post_form form-control', 'required', 'placeholder' => '投稿内容を入力してください。'])}}
   <input type="image" id="image" alt="投稿" src="../images/post.png" />
 </div>
 @if ($errors->first('username'))
@@ -42,10 +43,10 @@
     <form action="post/{id}/update" method="post">
       <textarea name="upPost" class="modal_post"></textarea>
       <input type="hidden" name="id" class="modal_id">
-      <input type="submit" value="更新">
+      <input type="image" id="editImage" alt="image" src="../images/edit.png">
+
       {{ csrf_field() }}
     </form>
-    <a class="js-modal-close" href=""><img src="../images/edit.png" id="close-modal"></a>
   </div>
 </div>
 @endsection

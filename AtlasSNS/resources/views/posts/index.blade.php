@@ -2,7 +2,11 @@
 
 @section('content')
 {!! Form::open(['url' => '/post', 'class' => 'post_container']) !!}
+@if (auth::user()->images === 'icon1.png')
+  <img src="{{asset('images/icon1.png')}}" alt="デフォルトアイコン" id="user-image"/>
+@else
 <img src="{{ asset('/storage/images/'.auth::User()->images) }}"id="user-image"/>
+@endif
 <div class="form-text">
   {{ Form::textarea('post', null,['class' => 'post_form form-control', 'required', 'placeholder' => '投稿内容を入力してください。'])}}
   <input type="image" id="image" alt="投稿" src="../images/post.png" />
@@ -13,10 +17,14 @@
 {!! Form::close() !!}
 @foreach ($posts as $post)
   <div class="post_index">
-  @if (!auth()->user()->isFollowing($post->id))
+  @if (auth::user()->isFollowing($post->user->id) || auth()->user()->id == $post->user->id)
     <ul>
       <li class="post-block">
-        <figure><img src="{{ asset('/storage/images/' . $post->user->images) }}" id="post-user-image"/></figure>
+        @if (auth::user()->images === 'icon1.png')
+          <figure><img src="{{asset('images/icon1.png')}}" alt="デフォルトアイコン" id="post-user-image"/></figure>
+        @else
+          <figure><img src="{{ asset('/storage/images/' . $post->user->images) }}" id="post-user-image" alt="アイコン"/></figure>
+        @endif
         <div class="post-content">
           <div>
             <div class="post-name">{{ $post->user->username }}</div>
@@ -25,7 +33,6 @@
           <div>{!! nl2br($post->post) !!}</div>
         </div>
   @endif
-
           @if (Auth::id() === $post->user_id)
             <div class="action-button">
               <a class="js-modal-open" href="" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="../images/edit.png" id="post-edit"></a>

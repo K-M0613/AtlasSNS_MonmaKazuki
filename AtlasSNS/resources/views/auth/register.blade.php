@@ -22,7 +22,7 @@
     @if ($errors->first('password'))
         <p class="alert alert-danger">※{{$errors->first('password')}}</p>
     @endif
-    <li>{{ Form::label('パスワード確認') }}</li>
+    <li class="pass_title">{{ Form::label('パスワード確認') }}</li>
     <li class="pass_form a">{{ Form::password('password_confirmation',null,['class' => 'output']) }}</li>
     @if ($errors->first('password_confirmation'))
         <p class="alert alert-danger">※{{$errors->first('password_confirmation')}}</p>

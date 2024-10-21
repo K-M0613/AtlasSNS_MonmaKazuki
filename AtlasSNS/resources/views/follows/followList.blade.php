@@ -5,7 +5,11 @@
     <p class="follow-title">フォローリスト</p>
     <div class="follow-icon">
       @foreach ($users as $user)
-      <a href="{{route('userProfile', ['id' => $user->id])}}"><img src="{{ asset('/storage/images/'.$user->images)}}" alt="アイコン" /></a>
+        @if (auth::user()->images === 'icon1.png')
+            <figure><a href="{{route('userProfile', ['id' => $user->id])}}"><img src="{{asset('images/icon1.png')}}" alt="デフォルトアイコン"/></a></figure>
+        @else
+          <figure><a href="{{route('userProfile', ['id' => $user->id])}}"><img src="{{ asset('/storage/images/' . $user->images) }}"/></a></figure>
+        @endif
       @endforeach
     </div>
   </div>
@@ -14,7 +18,11 @@
   <div class="post_index">
     <ul>
       <li class="post-block">
-        <figure><a href="{{route('userProfile', ['id' => $user->id])}}"><img src="{{ asset('/storage/images/' . $post->user->images) }}" id="post-user-image" /></a></figure> <!-- あとでプロフィールのリンク貼る -->
+        @if (auth::user()->images === 'icon1.png')
+            <figure><a href="{{route('userProfile', ['id' => $user->id])}}"><img src="{{asset('images/icon1.png')}}" alt="デフォルトアイコン" id="post-user-image"/></a></figure>
+        @else
+          <figure><a href="{{route('userProfile', ['id' => $user->id])}}"><img src="{{ asset('/storage/images/' . $post->user->images) }}" id="post-user-image" /></a></figure>
+        @endif
         <div class="post-content">
           <div>
             <div class="post-name">{{ $post->user->username }}</div>

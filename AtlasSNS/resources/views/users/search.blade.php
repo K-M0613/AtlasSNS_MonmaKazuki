@@ -5,9 +5,11 @@
   <div class="search-text">
     {{ Form::text('username', $searchWord,['class' => ' form-control search-form']) }}
     <input type="image" src="/images/search.png" id="searchImg">
+    @if (!empty($searchWord))
+      <p class="search-word">検索ワード:{{ $searchWord }}</p>
+    @endif
   </div>
 </div>
-
 {!! Form::close() !!}
 <div class="search_result">
   @foreach($finds as $find)

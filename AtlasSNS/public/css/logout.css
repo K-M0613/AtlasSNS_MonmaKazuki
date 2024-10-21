@@ -96,3 +96,39 @@ img.atlas {
     display: inline-block;
     border-bottom: #fff solid 2px;
 }
+
+.name, .welcome-text, .complete, .try-login, .link-btn {
+    text-align: center;
+}
+
+.name,
+.welcome-text,
+.complete,
+.try-login {
+    color: #fff;
+}
+
+.name, .welcome-text {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.name {
+    margin-top: 40px;
+}
+
+.welcome-text {
+    margin-bottom: 50px;
+}
+
+.complete, .try-login {
+    font-size: 24px;
+}
+
+.try-login {
+    margin-bottom: 30px;
+}
+
+.link-btn {
+    margin-bottom: 40px;
+}

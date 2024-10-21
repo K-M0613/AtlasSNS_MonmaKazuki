@@ -11,7 +11,7 @@ body {
 /* header */
 header {
     background: #186AC9;
-    height: 15%;
+    height: 130px;
 }
 
 header #atlas {
@@ -36,8 +36,8 @@ header #atlas {
     position: absolute;
     top: 25px;
     right: 30px;
-    width: 4%;
-    height: 8%;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
 }
 /* アコーディオンメニュー */
@@ -76,8 +76,9 @@ header #atlas {
     list-style: none;
     border: solid 1px #1E88E5;
     position: absolute;
-    top: 90px;
+    top: 130px;
     right: 1px;
+    width: 300px;
 }
 .accordion-list li a {
     display: block;
@@ -85,7 +86,7 @@ header #atlas {
     border-bottom: solid 1px #1E88E5;
     padding-bottom: 40px;
     padding-top: 40px;
-    width: 300px;
+    width: 100%;
     color: #B2BEB5;
     background-color: #fff;
 }
@@ -238,16 +239,15 @@ header #atlas {
 
 
 /* モーダル */
-.content {
+/* .content {
     margin: 0 auto;
     padding: 40px;
-}
+} */
 
 .modal {
     display: none;
     height: 100vh;
     position: fixed;
-    top: 0;
     width: 100%;
 }
 
@@ -315,6 +315,12 @@ header #atlas {
     display: flex;
     padding: 20px 20px;
     margin: 10px;
+}
+
+.search-word {
+    font-size: 24px;
+    margin-top: 15px;
+    margin-left: 300px;
 }
 
 .search-form {
@@ -393,5 +399,11 @@ header #atlas {
 }
 
 .follow-icon {
+    display: flex;
+    flex-wrap: wrap;
     margin-left: 100px;
+}
+
+.follow-icon figure {
+    margin-left: 15px;
 }
